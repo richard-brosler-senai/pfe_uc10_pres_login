@@ -1,3 +1,11 @@
 {
-  "login": [  ]
+  "login": [
+    {
+      "login": "richard.brosler@sp.senai.br",
+      "senha": "$2a$10$LJFn.HLWAmRF/HGMJosdreGUPZs6zhwpqas2baSRfrQNJsETvLVY2",
+      "email": "richard.brosler@sp.senai.br",
+      "nome": "Richard Brosler",
+      "id": 1
+    }
+  ]
 }

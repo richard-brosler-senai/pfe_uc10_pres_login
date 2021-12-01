@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/_services/login.service';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +13,22 @@ export class LoginComponent implements OnInit {
     senha: ''
   }
   
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
+  efetuarLogin(){
+    this.loginService.read().subscribe((dados)=>{
+      let retVlr=false;
+      dados.forEach(it=>{        
+        if (it.login == this.cadastro.login){
+          retVlr = bcrypt.compareSync(this.cadastro.senha, it.senha);
+          console.log("Retorno =>", retVlr);
+          console.log("Login efetuado com sucesso!");
+        }         
+      });
+      if (!retVlr) console.log('Login Com problema!')
+    })
+  }
 }

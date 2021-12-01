@@ -40,7 +40,7 @@
     </div>
 
     <div>
-      <button mat-button (click)="createCadastro()" color="primary">Cadastrar</button>
+      <button mat-raised-button [disabled]="cadastro.senha=='' || cadastro.senha!==cadastro.confsenha" (click)="createCadastro()" color="primary">Cadastrar</button>
     </div>
     <div>
       <span>Não tem cadastro?</span>
