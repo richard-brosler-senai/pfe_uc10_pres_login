@@ -1,0 +1,5 @@
+npm install bcryptjs --save
+
+ pass = bcrypt.hashSync('Pass@123', 10);
+
+bcrypt.compareSync(pass, users[i].password)
